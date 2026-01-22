@@ -119,9 +119,9 @@ All sensitive data is managed using environment variables.
 
 ### `.env` Example
 
-PORT=3000
-EMAIL_USER=your_service_email@gmail.com
-EMAIL_PASS=your_app_password
+PORT=3000  
+EMAIL_USER=your_service_email@gmail.com  
+EMAIL_PASS=your_app_password  
 
 > ⚠️ **Never commit the `.env` file to version control.**
 
