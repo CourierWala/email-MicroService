@@ -17,7 +17,15 @@ router.post("/send", async (req, res) => {
     });
   }
 
-  await emailQueue.add("send-email", value);
+  await emailQueue.add("send-email", value, {
+    attempts: 3,
+    backoff: {
+      type: "exponential",
+      delay: 2000,
+    },
+    removeOnComplete: true,
+    removeOnFail: false,
+  });
 
   res.status(202).json({
     success: true,
